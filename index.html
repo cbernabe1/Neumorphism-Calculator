@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-fields">
+            <div class="equation">
+                    <input type="text" class="toAdd">
+            </div>
+            <div class="result">
+                <h1 class="equals"></h1>
+            </div>
+        </div>
+        <div class="buttons">
+            <ul>
+                <li><button onclick="clearResult()">C</button></li>
+                <li><button onclick="deleteOne()">Del</button></li>
+                <li><button onclick="buttonClicked('%')">%</button></b></li>
+                <li><button onclick="buttonClicked('/')">/</button></li>
+                <li><button onclick="buttonClicked('7')">7</button></li>
+                <li><button onclick="buttonClicked('8')">8</button></li>
+                <li><button onclick="buttonClicked('9')">9</button></li>
+                <li><button onclick="buttonClicked('*')">x</button></li>
+                <li><button onclick="buttonClicked('4')">4</button></li>
+                <li><button onclick="buttonClicked('5')">5</button></li>
+                <li><button onclick="buttonClicked('6')">6</button></li>
+                <li><button onclick="buttonClicked('+')">+</button></li>
+                <li><button onclick="buttonClicked('1')">1</button></li>
+                <li><button onclick="buttonClicked('2')">2</button></li>
+                <li><button onclick="buttonClicked('3')">3</button></li>
+                <li><button onclick="buttonClicked('-')">-</button></li>
+                <li><button onclick="buttonClicked('0')">0</button></li>
+                <li><button onclick="buttonClicked('.')">.</button></li>
+                <li><button onclick="total()">=</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var toAdd = document.querySelector('.toAdd');
+        function clearResult(){
+            document.querySelector('.toAdd').value= "";
+            document.querySelector('.equals').innerHTML = "";
+        }
+        function deleteOne(){
+            var toDelete = document.querySelector('.toAdd').value;
+            toDelete = toDelete.substr(0,toDelete.length - 1);
+            document.querySelector('.toAdd').value = toDelete;
+        }
+        function buttonClicked(value){
+            document.querySelector('.toAdd').value += value;
+        }
+        function total(){
+            document.querySelector('.equals').innerHTML = toAdd.value= eval(toAdd.value);
+        }
+    </script>
+</body>
+</html>
